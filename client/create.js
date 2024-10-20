@@ -652,7 +652,7 @@ function updateChart() {
 
   }
 
-  fetch('http://localhost:4000/teacher-graph-data', {
+  fetch('https://one-simulation-api-chi.vercel.app/teacher-graph-data', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(simulatedData)

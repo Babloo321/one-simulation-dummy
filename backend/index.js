@@ -13,7 +13,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors({
-  origin: ['https://vercel.com/new/babloo-kumars-projects-0bc5e302'],// dummy,
+  origin: [''],// dummy,
   methods:['post', 'get'],
   credentials:true
 }));
