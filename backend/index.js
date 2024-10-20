@@ -25,6 +25,9 @@ dbConnection();
 
 
 // routing for the teacher page
+app.get("/",(_,res)=>{
+  res.send("hello");
+})
 app.get('/teachers', (req, res) => {
   res.sendFile(path.join(__dirname, 'teachers.html')); // Serve the send.html file when /send is accessed
 });
