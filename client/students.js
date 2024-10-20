@@ -260,34 +260,8 @@ document.addEventListener('DOMContentLoaded', function () {
   let data = {}; // Store data from EventSource here
   
 
-  fetch("https://one-simulation-api-chi.vercel.app/gettingData")
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json(); // Parse the JSON from the response
-    })
-    .then(dataa => {
-        // console.log('Data received from the backend:', data);
-        data = dataa;
-        console.log('Received data:', data);
-    if (bpChart) {
-      updateChartValue(data);
-    }
-        // You can now use the data in your application
-    })
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-    });
-  /*
-  const eventSource = new EventSource('https://one-simulation-api-chi.vercel.app/transferData');
-  
-  fetch("https://one-simulation-api-chi.vercel.app/gettingData", {
-    method:"get",
-    headers:{"Conternt-Type":"application/json",
 
-    }
-  })
+  const eventSource = new EventSource('https://one-simulation-api-chi.vercel.app/transferData');
   // Handle incoming data
   eventSource.onmessage = (event) => {
     data = JSON.parse(event.data); // Parse the JSON data
@@ -300,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
   eventSource.onerror = (error) => {
     console.error('Error in EventSource:', error);
   };
-  */
+
   // Create the BP chart after DOM is loaded
   function initializeCharts() {
     const bpCtx = document.getElementById('bp_chart')?.getContext('2d');
