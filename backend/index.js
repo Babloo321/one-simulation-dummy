@@ -13,7 +13,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors({
-  origin: [''],// dummy,
+  origin: ['https://one-simulation-client.vercel.app'],// dummy,
   methods:['post', 'get'],
   credentials:true
 }));
